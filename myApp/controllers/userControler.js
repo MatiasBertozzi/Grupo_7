@@ -1,6 +1,6 @@
 /* despues hay requerir la base de datos  */
 
-const user={
+const users={
     index:function(req, res, next) {
         res.send('respond with a resource');
       },
@@ -15,4 +15,4 @@ const user={
       },
 }
 
-module.exports=user
+module.exports=users
