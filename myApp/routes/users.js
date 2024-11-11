@@ -6,7 +6,8 @@ const userController=require("../controllers/userControler")
 router.get('/', userController.index);
 
 /* registro del usuario */
-router.get('/registro', userController.registro);
+router.get('/registro', userController.showRegistro);
+router.post('/registro', userController.registro);
 
 /* login */
 router.get('/login', userController.login);
