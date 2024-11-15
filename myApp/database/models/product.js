@@ -1,5 +1,5 @@
 module.exports =function(sequelize, dataTypes){
-    let alias = "Producto"; 
+    let alias = "Product"; 
     
     let cols = {
         id : {
@@ -30,6 +30,13 @@ module.exports =function(sequelize, dataTypes){
         timestamps : true,
         underscored : true
     }
-    let Products = sequelize.define(alias, cols, config);
-    return Products;
+    let Product = sequelize.define(alias, cols, config);
+    return Product;
+}
+
+Product.associote = function(models){
+    Product.belongsToMany(models.User, {
+        as: "user",
+        foreignKey: "id_user",
+    })
 }

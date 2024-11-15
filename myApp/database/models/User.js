@@ -29,6 +29,13 @@ module.exports =function(sequelize, dataTypes){
         timestamps : true,
         underscored : true
     }
-    let Users = sequelize.define(alias, cols, config);
-    return Users;
+    let User = sequelize.define(alias, cols, config);
+    return User;
+}
+
+User.associote = function(models){
+    User.hasmeny(models.Product, {
+        as: "product",
+        foreignKey: "id_user",
+    })
 }
