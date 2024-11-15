@@ -1,4 +1,4 @@
-/* despues hay requerir la base de datos  */
+
 
 
 const product={

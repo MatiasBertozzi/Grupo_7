@@ -1,4 +1,4 @@
-/* despues hay requerir la base de datos  */
+
 const bcryptjs=require("bcryptjs")
 
 const users={
@@ -11,9 +11,16 @@ const users={
       registro:function(req, res, next) {
         /*capturo datos del formulario, tienen que coincidir los datos del formulario con las columnas de a base de datos */
         let form = req.body;
-        form.password = bcryptjs.hashSync(form.password, 10); 
-       /* modelo de usuario para guardar la info del form en la base de datos */
-         db.User.create(form) 
+      
+        if (form.email== "") {
+          res.render("register.ejs",{respuesta:"el campo no puede estar vacio"})
+        } else if(form.password == ""){
+          res.send ("el campo no puede estar vacio")
+        };
+
+          form.password = bcryptjs.hashSync(form.password, 10);
+       
+         db.User.create(form) /* modelo de usuario lo usamos para guardar la info del form en la base de datos */
         .then((results) =>{
             return res.redirect("/");
         })
