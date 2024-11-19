@@ -29,12 +29,18 @@
 			</div>
 			<!-- name va a ser la clave del valor que ponga el usuario  -->
 			<form action="/" method="post">
-				<input type="email" name="email" id="" placeholder="Email">
-				<input type="password" name="password" id="" placeholder="Password">
+				<label class="form-label" for="email"> Email</label>
+				<input type="email" class="form-input" name="email" id="email" placeholder="Email">
+
+			
+				<label class="form-label" for="password">Password</label>
+				<input type="password" class="form-input"name="password" id="password" placeholder="Password">
+
 				<input type="checkbox" name="" id=""> Recuerdame 
 				<button type="submit">Enviar</button>
 			</form>
 <br>
+
 
 	<!-- footer -->
 	<%- include('partials/footer') %>

@@ -27,18 +27,20 @@
 				<h2 class="products-title">Registrate</h2>
 			</div>
 
-			<form action="/user/login" method="post">
-				<input type="email" name="email" id="" placeholder="Email">
-				<%=respuesta %>
-				<input type="text" name="user" id="" placeholder="usuario">
-				<input type="password" name="password" id="" placeholder="Password">
+			<form action="/users/registro" method="post">
+				<label class="form-label" for="email"> Email</label>
+				<input type="email" class="form-input" name="email" id="email" placeholder="Email">
+
+				
+				<label class="form-label" for="usuario">Usuario</label>
+				<input type="text" class="form-input"name="user" id="usuario" placeholder="usuario">
+
+				<label class="form-label" for="password">Password</label>
+				<input type="password" class="form-input"name="password" id="password" placeholder="Password">
+
 				<button type="submit">Enviar</button>
 			</form>
 			
-			<h2 class="col-12"> //////////////////////////////// <br>
-				Eliminá está etiqueta h2 y creá en su lugar el formulario de registro <br>
-			////////////////</h2>
-
 
 	<!-- footer -->
 	<%- include('partials/footer') %>

@@ -31,12 +31,13 @@ module.exports =function(sequelize, dataTypes){
         underscored : true
     }
     let Product = sequelize.define(alias, cols, config);
+
+    Product.associate = function(models){
+    Product.belongsTo(models.User, {
+        as: "user", /* nombre del modelos a relacionar */
+        foreignKey: "id_user" /* la columna que relaciona las 2 tablas */
+    });
+}
     return Product;
 }
 
-Product.associote = function(models){
-    Product.belongsToMany(models.User, {
-        as: "user",
-        foreignKey: "id_user",
-    })
-}
