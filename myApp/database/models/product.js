@@ -10,7 +10,13 @@ module.exports =function(sequelize, dataTypes){
         id_user : {
             type : dataTypes.INTEGER
         },
+        imagen_producto:{
+            type : dataTypes.STRING
+        },
         nombre_producto : {
+            type : dataTypes.STRING
+        },
+        descripcion_producto: {
             type : dataTypes.STRING
         },
         created_at: {
@@ -18,12 +24,8 @@ module.exports =function(sequelize, dataTypes){
         },
         updated_at: {
             type : dataTypes.DATE
-        },
-        descripcion: {
-            type : dataTypes.STRING
         }
-        /* Falta la referens para foreign key*/
-
+    
     };
     let config = {
         tableName : "product",

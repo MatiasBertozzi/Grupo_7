@@ -1,6 +1,3 @@
-
-
-
 const product={
     searchProduct:function(req, res, next) {
          res.render("search-results.ejs");
