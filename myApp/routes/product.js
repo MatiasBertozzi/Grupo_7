@@ -10,4 +10,5 @@ router.get('/searchProduct', productController.searchProduct);
 
 /* agregar producto */
 router.get('/addProduct', productController.addProduct);
+
 module.exports = router;

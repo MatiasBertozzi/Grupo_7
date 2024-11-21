@@ -4,7 +4,7 @@ USE tp_grupo_7;
 CREATE TABLE users (
 id int unsigned primary key auto_increment,
 usuario varchar(50) not null,
-email varchar(50) not null	,
+email varchar(50) unique not null	,
 password_user text not null, 
 created_at 	timestamp default current_timestamp ,
 updated_at	timestamp default current_timestamp on update current_timestamp	
