@@ -1,6 +1,6 @@
 
  const db =require("../database/models") 
- /* por alguna razon cuando requiero el modelo de la base de datos la pagina no responde  */
+
 const bcryptjs=require("bcryptjs");
 
 const users={
