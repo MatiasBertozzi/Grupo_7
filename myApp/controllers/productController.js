@@ -30,8 +30,12 @@ const product ={
          
         
         .then(function (results) {
-          
+          if (results[0]==null) {
+            return res.send("No hay resultados para su criterio de búsqueda.")
+          } else {
             return res.render("search-results", {results:results})
+          }
+            
           
           
          }) /* luego de que reciba los datos ejecuta la promesa */
@@ -43,9 +47,19 @@ const product ={
       addProduct:function(req, res) {
         res.render('product-add.ejs');
       },
-      showResults:function(req, res) {
-        res.render('search-results');
-      },
+      detallePorduct:function(req, res) {
+        let id=req.params.id
+      db.Product.findByPk(id)
+      .then(function (results) {
+        return res.render("product",{results:results})
+      })
+      .catch(function (err) {
+        console.log(err);
+        })
+
+
+      }
+     
 };
 
 
