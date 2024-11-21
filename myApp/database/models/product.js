@@ -1,5 +1,5 @@
 module.exports =function(sequelize, dataTypes){
-    let alias = "Product"; 
+    let alias = "Product";  // clave para llamarlo desde el controller//
     
     let cols = {
         id : {
@@ -10,20 +10,22 @@ module.exports =function(sequelize, dataTypes){
         id_user : {
             type : dataTypes.INTEGER
         },
+        imagen_producto:{
+            type : dataTypes.STRING(250)
+        },
         nombre_producto : {
-            type : dataTypes.STRING
+            type : dataTypes.STRING(50)
+        },
+        descripcion_producto: {
+            type : dataTypes.STRING(50)
         },
         created_at: {
             type : dataTypes.DATE
         },
         updated_at: {
             type : dataTypes.DATE
-        },
-        descripcion: {
-            type : dataTypes.STRING
         }
-        /* Falta la referens para foreign key*/
-
+    
     };
     let config = {
         tableName : "product",
