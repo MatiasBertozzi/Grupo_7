@@ -5,6 +5,7 @@ module.exports = {
         let filtro = {
             include: [{ association: "user" }],
             order: [["createdAt", "DESC"]], 
+            limit: 8
         };
         db.Product.findAll(filtro)
             .then(function (results) {
