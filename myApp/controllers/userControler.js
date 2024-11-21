@@ -37,9 +37,7 @@ const users={
         res.render('login.ejs');
       },
       logout:function(req, res, next) {
-        req.session.destroy();
-        res.clearCookie("userId");
-        return res.redirect("/")
+        res.send('respond with a resource');
       },
 }
 
