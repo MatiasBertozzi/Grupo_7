@@ -1,6 +1,6 @@
 
  const db =require("../database/models") 
- /* por alguna razon cuando requiero el modelo de la base de datos la pagina no responde  */
+
 const bcryptjs=require("bcryptjs");
 
 const users={
@@ -37,7 +37,9 @@ const users={
         res.render('login.ejs');
       },
       logout:function(req, res, next) {
-        res.send('respond with a resource');
+        req.session.destroy();
+        res.clearCookie("id_user");
+        return res.redirect("/")
       },
 }
 

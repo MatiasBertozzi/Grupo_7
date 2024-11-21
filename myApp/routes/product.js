@@ -10,4 +10,7 @@ router.get('/searchProduct', productController.searchProduct);
 
 /* agregar producto */
 router.get('/addProduct', productController.addProduct);
+
+router.get('/id/:id', productController.detallePorduct);
+
 module.exports = router;
