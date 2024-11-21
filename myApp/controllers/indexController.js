@@ -7,8 +7,8 @@ module.exports = {
             order: [["createdAt", "DESC"]], 
         };
         db.Product.findAll(filtro)
-            .then(function (productos) {
-                res.render("index", { productos });
+            .then(function (results) {
+                res.render("index", { results });
             })
             .catch(function (error) {
                 console.log(error);

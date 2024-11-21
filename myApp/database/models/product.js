@@ -1,5 +1,5 @@
 module.exports =function(sequelize, dataTypes){
-    let alias = "Product"; 
+    let alias = "Product";  // clave para llamarlo desde el controller//
     
     let cols = {
         id : {
@@ -11,13 +11,13 @@ module.exports =function(sequelize, dataTypes){
             type : dataTypes.INTEGER
         },
         imagen_producto:{
-            type : dataTypes.STRING
+            type : dataTypes.STRING(250)
         },
         nombre_producto : {
-            type : dataTypes.STRING
+            type : dataTypes.STRING(50)
         },
         descripcion_producto: {
-            type : dataTypes.STRING
+            type : dataTypes.STRING(50)
         },
         created_at: {
             type : dataTypes.DATE
