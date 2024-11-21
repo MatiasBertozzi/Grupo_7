@@ -39,11 +39,11 @@
 				<section class="product-box">
 					<a href="/product.ejs/id/<%= results[i].id %>">
                         <figure class="product-box_image">
-                            <img src="images/products/<%= results.imagen_producto %>" alt="<%= results.nombre_producto %>">
+                            <img src="images/products/<%= results[i].imagen_producto %>" alt="<%= results[i].nombre_producto %>">
                         </figure>
                         <article class="product-box_data">
-                            <h2><%= results.nombre_producto %></h2>
-                            <p><%= results.descripcion_producto %></p>
+                            <h2><%= results[i].nombre_producto %></h2>
+                            <p><%= results[i].descripcion_producto %></p>
                             <p>Comentarios: Completar</p>
                         </article>
                     </a>
