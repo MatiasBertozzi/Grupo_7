@@ -24,12 +24,8 @@ const product ={
         order:[["created_at","DESC"]],
         include:[{association:"user"}]}
  
-    
 
-
-      db.Product.findAll(filtro)/*objeto literario en donde se encuentra las condiciones*/
-         
-        
+      db.Product.findAll(filtro)
         .then(function (results) {
           if (results[0]==null) {
             return res.send("No hay resultados para su criterio de búsqueda.")
