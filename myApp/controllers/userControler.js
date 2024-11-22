@@ -46,6 +46,9 @@ const users={
           } else {
             let check =bcryptjs.compareSync(form.password, results.password_user)
             if (check) {
+              //Debo poner el usuario de inicio de session//
+              req.session.userLogueado = results.dataValues; //para guardar los datos importentes de la tabla//
+              
               return res.redirect('/');
             } else {
               return res.send("La contraseña es incorrecta")
