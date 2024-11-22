@@ -21,7 +21,8 @@ const product ={
       let buscador= req.query.search
       let filtro={
         where:[{nombre_producto: {[op.like]:`%${buscador}%`}}],     
-        order:[["created_at","DESC"],]}
+        order:[["created_at","DESC"]],
+        include:[{association:"user"}]}
  
     
 
