@@ -36,6 +36,28 @@ const users={
       login:function(req, res, next) {
         res.render('login.ejs');
       },
+      loginPost:function(req,res){
+        let form = req.body;
+        let filtro = {
+          where: {email : form.email}
+        }
+
+        db.User.findOne(filtro)
+        .then(function(results){
+          if (!results) {
+            return res.send('No hay mail')
+          } else {
+            let check =bcryptjs.compareSync(form.password, results.password_user)
+            if (check) {
+              return res.redirect('/');
+            } else {
+              return res.send("La contraseña es incorrecta")
+            }
+          }
+        }).catch(function(error){
+        return console.log(error)
+        });
+      },
       logout:function(req, res, next) {
         req.session.destroy();
         res.clearCookie("id_user");
