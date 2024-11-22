@@ -7,6 +7,7 @@ var logger = require('morgan');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 let productRouter = require('./routes/product');
+const session = require('express-session');
 
 var app = express();
 
@@ -19,6 +20,20 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Implementar session // 
+app.use(session({
+  secret: "myApp",
+  resave: false,
+  saveUninitialized: true,
+}));
+// Pasa mano de la inf de session a locals // 
+app.use(function(req, res, next){
+  if(req.session.userLogueado != undefined){
+    res.locals.userLogueado = req.session.userLogueado
+  }
+  return next();
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
