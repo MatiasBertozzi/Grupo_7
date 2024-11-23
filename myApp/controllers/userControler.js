@@ -22,7 +22,7 @@ const users={
 
          db.User.create(form) /* modelo de usuario lo usamos para guardar la info del form en la base de datos */
         .then((results) =>{
-          return res.redirect("/user/login")
+          return res.redirect("/users/login")
         })
         .catch((err) => {
             return console.log(err);

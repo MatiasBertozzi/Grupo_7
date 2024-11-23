@@ -35,7 +35,7 @@
             <ul class="right-navbar">
             <!-- Estos li deben verse solo si el usuario está logueado -->
                 <li> 
-                    <%= locals.User.usuario %> <i class="fas fa-user"></i>
+                    <%= locals.userLogueado.usuario %> <i class="fas fa-user"></i>
                 </li>
                 <li>
                     <form action="/users/logout" method="post">
