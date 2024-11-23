@@ -12,14 +12,15 @@ const users={
       registro:function(req, res) {
         /*capturo datos del formulario, tienen que coincidir los datos del formulario con las columnas de a base de datos */
         let form = req.body;
-        form.password_user = bcryptjs.hashSync(form.password_user, 10);
-
+        
         if (form.email== "") {
           res.send ("el campo email no puede estar vacio")
-        } else if(form.password_user == ""){
+        } else if(form.password_user== ""){
           res.send ("el campo password no puede estar vacio")
         };
-
+        
+        form.password_user = bcryptjs.hashSync(form.password_user, 10);
+        
          db.User.create(form) /* modelo de usuario lo usamos para guardar la info del form en la base de datos */
         .then((results) =>{
           return res.redirect("/users/login")
