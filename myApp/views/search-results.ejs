@@ -47,9 +47,9 @@
 								<article class="product-box_data">
 									<h2><%= results[i].nombre_producto %></h2>
 									<p><%= results[i].descripcion_producto %></p>
-									<p>Usuario: <%= results[i].user.usuario %></p>
 									<p>Comentarios: Completar</p>
-								</article>
+									<p>Ir al perfil: <a href="/users/perfil"><%= results[i].user.usuario %></a></p>
+									</article>
 							</a>
 						</section>
 					</div>
