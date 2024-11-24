@@ -44,6 +44,26 @@ const product ={
       addProduct:function(req, res) {
         res.render('product-add.ejs');
       },
+      addProductPost:function(req, res){
+        let form = req.body;
+        form.id_user = req.session.userLogueado.id;
+
+        if (form.imagen == ''){
+          res.send('La imagen no puede estar vacia')
+        }else if (form.nombre_producto == ''){
+          res.send('El producto no puede estar vacio')
+        }else if (form.description == ''){
+          res.send('La descripcion no puede estar vacia')
+        }else{
+          db.Product.create(form)
+          .then(function(){
+            return res.redirect('/')
+          })
+          .catch(function(error){
+            return console.log(error)
+          })
+        }
+      },
       detallePorduct:function(req, res) {
         let id=req.params.id
       db.Product.findByPk(id)
