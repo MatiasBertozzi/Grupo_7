@@ -64,6 +64,21 @@ const users={
         res.clearCookie("id_user");
         return res.redirect("/")
       },
+      controlacc:function (req ,res) {
+        function isLoggedIn(req, res, next) {
+          if (req.session.user) {
+              return res.redirect('/'); // Si está logueado, redirige al home
+          }
+          next();
+      }
+      
+      function isNotLoggedIn(req, res, next) {
+          if (!req.session.user) {
+              return res.redirect('/login'); // Si no está logueado, redirige al login
+          }
+          next();
+      }
+      
 }
 
 module.exports=users
