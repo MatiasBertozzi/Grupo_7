@@ -70,14 +70,14 @@ control:function(req ,res) {
     if (req.session.user) {
         return res.redirect('/'); // Si está logueado, redirige al home
     }
-    next();
+    
 }
 
 function noLogg(req, res, next) {
     if (!req.session.user) {
         return res.redirect('/login'); // Si no está logueado, redirige al login
     }
-    next();
+    
 }
 
   
