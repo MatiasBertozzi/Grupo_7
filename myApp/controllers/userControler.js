@@ -64,7 +64,8 @@ const users={
         res.clearCookie("id_user");
         return res.redirect("/")
       },
-      
+     
+    
       
 }
 
