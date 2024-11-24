@@ -10,6 +10,7 @@ router.get('/searchProduct', productController.searchProduct);
 
 /* agregar producto */
 router.get('/addProduct', productController.addProduct);
+router.post('/addProduct', productController.addProductPost);
 
 router.get('/id/:id', productController.detallePorduct);
 

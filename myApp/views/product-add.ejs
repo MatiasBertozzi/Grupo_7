@@ -32,14 +32,14 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> //////////////////////////////// <br>
-				Eliminá está etiqueta h2 y creá en su lugar el formulario para agregar productos al catálogo <br>
-				////////////////</h2>
-				
-				<form action="" method="get">
-					<input type="image" name="imagen" id="" placeholder="imagen">
-					<input type="text" name="product-name" id="" placeholder="nombre del producto">
-					<textarea name="descripcion" id="" placeholder="descripcion"></textarea>
+			
+				<form action="/product/addProduct" method="post">
+					<label class="form-label" for="imagen"> URL de la Imagen</label>
+					<input type="text" class="form-input" name="imagen" id="" placeholder="URL">
+					<label class="form-label" for="nombre_producto"> Nombre del producto</label>
+					<input type="text" class="form-input" name="nombre_producto" id="" placeholder="Nombre">
+					<label class="form-label" for="descripcion"> Descripcion</label>
+					<textarea name="descripcion" class="form-input" id="" placeholder="Descripcion"></textarea>
 					<button type="submit">Enviar</button>
 				</form>
 

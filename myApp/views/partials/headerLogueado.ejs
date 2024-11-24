@@ -29,13 +29,14 @@
         <nav class="main-navbar">
             <ul class="left-navbar">
                 <li><a href="/">Todos los productos</a></li>
-                <!-- solo logueado <li><a href="">Cargar productos</a></li> -->
+                <!-- solo logueado--> 
+                 <li><a href="/product/addProduct">Cargar productos</a></li> 
             </ul>
 
             <ul class="right-navbar">
             <!-- Estos li deben verse solo si el usuario está logueado -->
                 <li> 
-                    <%= locals.userLogueado.usuario %> <i class="fas fa-user"></i>
+                    Bienvenido <%= locals.userLogueado.usuario %> <i class="fas fa-user"></i>
                 </li>
                 <li>
                     <form action="/users/logout" method="post">
