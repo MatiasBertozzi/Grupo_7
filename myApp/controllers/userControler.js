@@ -66,14 +66,14 @@ const users={
       },
 
 control:function(req ,res) {
-  function isLogg(req, res, next) {
+  function isLogg(req, res, ) {
     if (req.session.user) {
         return res.redirect('/'); // Si está logueado, redirige al home
     }
     
 }
 
-function noLogg(req, res, next) {
+function noLogg(req, res) {
     if (!req.session.user) {
         return res.redirect('/login'); // Si no está logueado, redirige al login
     }
