@@ -79,8 +79,9 @@ function noLogg(req, res) {
     }
     
 }
-
-  
+},
+perfil: function (req,res){
+  return res.render('perfil')
 }
 
 
