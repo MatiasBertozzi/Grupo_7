@@ -12,6 +12,6 @@ router.get('/searchProduct', productController.searchProduct);
 router.get('/addProduct', productController.addProduct);
 router.post('/addProduct', productController.addProductPost);
 
-router.get('/id/:id', productController.detallePorduct);
+router.get('/id/:id', productController.detalleProduct);
 
 module.exports = router;

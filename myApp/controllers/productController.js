@@ -3,19 +3,7 @@ const db =require("../database/models")
 const op=db.Sequelize.Op; /* cuando queremos filtrar por criterios que no sean igualdad necesitamos utlizar operadores sequelize */
 
 const product ={
-    detalle: function (req,res){
-      let id = req.params.id;
-      let filtro = {
-          include: [{association: "user"}]
-      }
-      db.Product.findByPk (id, filtro)
-      .them(function(results) {
-        return res.render('product',{producto: results})
-      })
-      .catch(function(error){
-        console.log(error)
-      })
-    },
+    
     searchProduct:function(req, res) {
 
       let buscador= req.query.search
@@ -64,7 +52,7 @@ const product ={
           })
         }
       },
-      detallePorduct:function(req, res) {
+      detalleProduct:function(req, res) {
         let id=req.params.id
         let filtro={ where:[{id:id}],
         include:[{association:"user"}]}
