@@ -18,7 +18,7 @@ router.get('/logout', userController.logout);
 router.post('/logout', userController.logout);
 
 /* perfil */
-router.get('/perfil', userController.perfil);
+router.get('/perfil/id/:id', userController.perfil);
 router.get('/perfilUsuario', userController.perfilUsuario);
 
 
