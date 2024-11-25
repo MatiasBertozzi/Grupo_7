@@ -37,12 +37,13 @@ const product ={
         let id = req.session.userLogueado.id;
         
         form.id_user = id
+        
        
-        if (form.imagen == ''){
+        if (form.imagen_producto == ''){
           res.send('La imagen no puede estar vacia')
         }else if (form.nombre_producto == ''){
           res.send('El producto no puede estar vacio')
-        }else if (form.description == ''){
+        }else if (form.descripcion_producto == ''){
           res.send('La descripcion no puede estar vacia')
         }else{
           db.Product.create(form)

@@ -11,7 +11,7 @@ module.exports =function(sequelize, dataTypes){
             type : dataTypes.INTEGER
         },
         imagen_producto:{
-            type : dataTypes.STRING(250)
+            type : dataTypes.STRING(250),
         },
         nombre_producto : {
             type : dataTypes.STRING(50)
