@@ -1,7 +1,7 @@
 
 const db =require("../database/models") 
 const bcryptjs=require("bcryptjs");
-
+const op=db.Sequelize.Op;
 const users={
     index:function(req, res) {
         res.send('respond with a resource');
