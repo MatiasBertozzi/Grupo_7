@@ -66,7 +66,9 @@ const product ={
       },
       detallePorduct:function(req, res) {
         let id=req.params.id
-      db.Product.findByPk(id)
+        let filtro={ where:[{id:id}],
+        include:[{association:"user"}]}
+      db.Product.findOne( filtro)
       .then(function (results) {
         return res.render("product",{results:results})
       })

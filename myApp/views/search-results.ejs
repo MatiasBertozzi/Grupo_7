@@ -48,7 +48,7 @@
 									<h2><%= results[i].nombre_producto %></h2>
 									<p><%= results[i].descripcion_producto %></p>
 									<p>Comentarios: Completar</p>
-									<p>Ir al perfil: <a href="/users/perfil/id/<%= results[i].id %>"><%= results[i].user.usuario %></a></p>
+									 <a href="/users/perfil/id/<%= results[i].user.id %>"><p>Ir al perfil: <%= results[i].user.usuario %></p></a>
 									</article>
 							</a>
 						</section>
