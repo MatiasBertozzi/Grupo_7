@@ -81,7 +81,15 @@ function noLogg(req, res) {
 }
 },
 perfil: function (req,res){
-  return res.render('perfil')
+  let id=req.params.id
+   db.User.findByPk(id)
+  .then(function (results) {
+   return res.render("perfil",{results:results})
+  })
+  .catch(function (err) {
+    console.log(err);
+  }) 
+  
 },
 perfilUsuario: function (req,res){
   return res.render('perfilUsuario')
