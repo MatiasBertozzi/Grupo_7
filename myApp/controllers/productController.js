@@ -34,8 +34,10 @@ const product ={
       },
       addProductPost:function(req, res){
         let form = req.body;
-        form.id_user = req.session.userLogueado.id;
-
+        let id = req.session.userLogueado.id;
+        
+        form.id_user = id
+       
         if (form.imagen == ''){
           res.send('La imagen no puede estar vacia')
         }else if (form.nombre_producto == ''){
